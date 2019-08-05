@@ -29,12 +29,12 @@ http://localhost:8889/SpringSecurityInMemorySetup/
 Before runing the project, run the sql script springsectest.sql. I have used maria DB.
 I have several users for testing the security:
 <pre>
-## user             pass <br>
-mamun      |        mamun111 <br>
-sourav     |        sourav111 <br>
-kayum      |        kayum111 <br>
-sourav     |        sourav111 <br>
-abraham    |        abraham111 <br>
+## user            pass <br>
+mamun              mamun111 <br>
+sourav             sourav111 <br>
+kayum              kayum111 <br>
+sourav             sourav111 <br>
+abraham            abraham111 <br>
 </pre>
 
 I have used https://www.devglan.com/online-tools/bcrypt-hash-generator  to generate Bcrypt encrypted password and saved to the database. Spring security by default uses Bcrypt, so we will be entering plain text as password in the password field, Spring will generate Bcrypt encrypted password and will match the password with database's password. 
