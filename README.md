@@ -21,3 +21,21 @@ http://localhost:8888/SpringSecurityInMemorySetup/
 
 ### Logout page:
 ![logoutpage](https://github.com/Md-MamunAbdulKayum/springboot-security-examples/blob/master/img/in-memory/logout.JPG)
+
+## For Database-JDBC Spring security setup:
+Run the project as a Java project and hit the below URL in your browser:<br>
+http://localhost:8889/SpringSecurityInMemorySetup/
+
+Before runing the project, run the sql script springsectest.sql. I have used maria DB.
+I have several users for testing the security:
+---------------------------------------------------
+user             pass
+----------------------------------
+mamun            mamun111
+sourav           sourav111
+kayum            kayum111
+sourav           sourav111
+abraham          abraham111
+
+I have used https://www.devglan.com/online-tools/bcrypt-hash-generator  to generate Bcrypt encrypted password and saved to the database. Spring security by default uses Bcrypt, so we will be entering plain text as password in the password field, Spring will generate Bcrypt encrypted password and will match the password with database's password. 
+
