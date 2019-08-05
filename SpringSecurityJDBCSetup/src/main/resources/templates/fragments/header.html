@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+	<th:block th:fragment="header">
+
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+          <img src="" alt="logo">
+        </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+        </li>
+        <li sec:authorize="isAuthenticated()" class="nav-item">
+          <a class="nav-link" th:href="@{/about}">About</a>
+        </li>
+        <li sec:authorize="isAuthenticated()" class="nav-item">
+          <a class="nav-link" th:href="@{/news}">News</a>
+        </li>
+        <li sec:authorize="hasRole('ADMIN')"  class="nav-item">
+          <a class="nav-link" th:href="@{/system/settings}">System Settings</a>
+        </li>      
+        <li sec:authorize="hasRole('ADMIN')"  class="nav-item">
+          <a class="nav-link" th:href="@{/system/updates}">System Updates</a>
+        </li>
+	
+        <li sec:authorize="hasRole('MANAGER')" class="nav-item">
+          <a class="nav-link" th:href="@{/employer/settings}">Leader Settings</a>
+        </li>
+        <li sec:authorize="hasRole('MANAGER')" class="nav-item">
+          <a class="nav-link" th:href="@{/employer/updates}">Leader Updates</a>
+        </li>
+
+         <li sec:authorize="hasAnyRole('MANAGER','ADMIN','HR_MANAGER')" class="nav-item">
+          <a class="nav-link" th:href="@{/jobs}">Job Posts</a>
+        </li>
+
+        <li sec:authorize="isAuthenticated()" class="nav-item mr-auto">       
+			<form th:action="@{logout}" method="post">
+			    <a href="javascript:;" onclick="parentNode.submit();">logout</a>
+			</form>
+        </li>
+</ul>
+    </div>
+  </div>
+</nav>
+
+
+
+	</th:block>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Reference Bootstrap files -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link
+	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css"
+	rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700,900"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700"
+	rel="stylesheet">
+<link rel="stylesheet" href="../static/css/style.css"
+	th:href="@{/css/style.css}">
+
+<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Note
+	Arena - Spring Security Demo</title>
+</head>
+<body>
+	<th:block th:replace="fragments/header :: header" />
+	<div class="container-fluid">
+		<th:block layout:fragment="content" />
+	</div>
+	<th:block th:replace="fragments/footer :: footer" />
+</body>
+</html>
