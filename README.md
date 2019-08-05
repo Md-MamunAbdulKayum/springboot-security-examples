@@ -28,9 +28,8 @@ http://localhost:8889/SpringSecurityInMemorySetup/
 
 Before runing the project, run the sql script springsectest.sql. I have used maria DB.
 I have several users for testing the security:
----------------------------------------------------
-user             pass
-----------------------------------
+
+## user             pass
 mamun            mamun111
 sourav           sourav111
 kayum            kayum111
